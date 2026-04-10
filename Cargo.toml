@@ -1,0 +1,9 @@
+[package]
+name = "cuda-biology"
+version = "0.1.0"
+edition = "2021"
+description = "Biological agent runtime — maps instinct engine to instruction set with energy budgets"
+
+[dependencies]
+cuda-equipment = { path = "/tmp/fleet-workspace/cuda-equipment" }
+serde = { version = "1", features = ["derive"] }

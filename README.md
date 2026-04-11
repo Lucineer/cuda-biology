@@ -1,48 +1,94 @@
 # cuda-biology
 
-**Biological agent architecture -- the full pipeline from perception to action.**
+Biological agent runtime — instinct→enzyme→gene→RNA→protein pipeline with energy and apoptosis (Rust)
 
-> Membrane is security. Enzymes are catalysts. Genes are programs. ATP is fuel.
+Part of the Cocapn biology layer — bio-inspired agent lifecycle and energy.
 
-## The Architecture
+## What It Does
 
-This crate implements the complete biological agent pipeline from cuda-genepool as a higher-level agent:
+### Key Types
 
+- `Gene` — core data structure
+- `Enzyme` — core data structure
+- `RnaMessenger` — core data structure
+- `Membrane` — core data structure
+- `MembraneAntibody` — core data structure
+- `BiologicalAgent` — core data structure
+
+## Quick Start
+
+```bash
+# Clone
+git clone https://github.com/Lucineer/cuda-biology.git
+cd cuda-biology
+
+# Build
+cargo build
+
+# Run tests
+cargo test
 ```
-Environment -> Sensors -> Membrane -> Enzymes -> Genes -> RNA -> Proteins -> FLUX -> Execute
-                    |          |           |       |      |         |       |
-                    v          v           v       v      v         v       v
-                 perception  security    trigger  store  translate compile  act
-```
-
-## Key Components
-
-- **BiologicalAgent**: The full agent with membrane, enzyme pipeline, and gene pool
-- **Membrane**: Self/other boundary with antibody-based security filtering
-- **CircadianModulation**: Time-based instinct strength adjustment
-- **Apoptosis**: Graceful self-termination when fitness drops
-- **GeneCrossover**: Sexual reproduction between agent gene pools
 
 ## Usage
 
 ```rust
-use cuda_biology::{BiologicalAgent, Membrane};
+use cuda_biology::*;
 
-let agent = BiologicalAgent::new("navigator-1");
-agent.perceive(sensor_data);  // Goes through membrane first
-agent.deliberate();           // ATP-limited reasoning
-agent.act();                  // Execute highest-priority protein
-agent.rest();                 // Generate ATP, consolidate memories
+// See src/lib.rs for full API
+// 15 unit tests included
 ```
 
-## Ecosystem Integration
+### Available Implementations
 
-- [cuda-genepool](https://github.com/Lucineer/cuda-genepool) -- Core biological primitives
-- [cuda-neurotransmitter](https://github.com/Lucineer/cuda-neurotransmitter) -- Synaptic modulation
-- [cuda-energy](https://github.com/Lucineer/cuda-energy) -- ATP budget management
-- [flux-runtime-c](https://github.com/Lucineer/flux-runtime-c) -- Protein bytecode execution
-- [cuda-instruction-set](https://github.com/Lucineer/cuda-instruction-set) -- Opcode definitions
+- `Instinct` — see source for methods
+- `Gene` — see source for methods
+- `Enzyme` — see source for methods
+- `RnaMessenger` — see source for methods
+- `Membrane` — see source for methods
+- `BiologicalAgent` — see source for methods
+
+## Testing
+
+```bash
+cargo test
+```
+
+15 unit tests covering core functionality.
+
+## Architecture
+
+This crate is part of the **Cocapn Fleet** — a git-native multi-agent ecosystem.
+
+- **Category**: biology
+- **Language**: Rust
+- **Dependencies**: See `Cargo.toml`
+- **Status**: Active development
+
+## Related Crates
+
+- [cuda-energy](https://github.com/Lucineer/cuda-energy)
+- [cuda-neurotransmitter](https://github.com/Lucineer/cuda-neurotransmitter)
+- [cuda-genepool](https://github.com/Lucineer/cuda-genepool)
+- [cuda-dna](https://github.com/Lucineer/cuda-dna)
+
+## Fleet Position
+
+```
+Casey (Captain)
+├── JetsonClaw1 (Lucineer realm — hardware, low-level systems, fleet infrastructure)
+├── Oracle1 (SuperInstance — lighthouse, architecture, consensus)
+└── Babel (SuperInstance — multilingual scout)
+```
+
+## Contributing
+
+This is a fleet vessel component. Fork it, improve it, push a bottle to `message-in-a-bottle/for-jetsonclaw1/`.
 
 ## License
 
-MIT OR Apache-2.0
+MIT
+
+---
+
+*Built by JetsonClaw1 — part of the Cocapn fleet*
+*See [cocapn-fleet-readme](https://github.com/Lucineer/cocapn-fleet-readme) for the full fleet roadmap*

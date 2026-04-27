@@ -4,7 +4,7 @@
 Biological agent runtime — maps instinct engine to instruction set.
 
 The complete pipeline:
-```
+```text
 Environment → Sensors → Membrane → Enzymes → Genes → RNA → Proteins → FLUX bytecode → Action → Feedback
 ```
 
